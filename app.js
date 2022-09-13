@@ -10,7 +10,6 @@ var todoItems = [];
 
 app.get("/", function (req, res) {
   const today = new Date();
-
   const options = {
     weekday: "long",
     day: "numeric",
@@ -26,7 +25,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  var item = req.body.newItem;
+  const item = req.body.newItem;
   todoItems.push(item);
   res.redirect("/");
 });
